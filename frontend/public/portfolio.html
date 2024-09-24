@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Portfolio Management</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Add CSS here -->
+    <script defer src="portfolio.js"></script> <!-- Connect the JS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Your Stock Portfolio</h1>
+
+        <!-- Form to add stocks to portfolio -->
+        <form id="portfolio-form">
+            <label for="symbol">Stock Symbol:</label>
+            <input type="text" id="symbol" name="symbol" placeholder="AAPL, TSLA, etc." required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Number of shares" required>
+
+            <label for="price">Purchase Price:</label>
+            <input type="number" id="price" name="price" step="0.01" placeholder="Price per share" required>
+
+            <button type="submit">Add to Portfolio</button>
+        </form>
+
+        <hr>
+
+        <!-- Portfolio List -->
+        <h2>Your Portfolio</h2>
+        <ul id="portfolio-list"></ul> <!-- List to display user's stock portfolio -->
+
+        <!-- Update Stock Form (Hidden by default) -->
+        <div id="update-section" style="display:none;">
+            <h2>Update Stock</h2>
+            <form id="update-form">
+                <label for="update-symbol">Stock Symbol:</label>
+                <input type="text" id="update-symbol" name="symbol" required disabled> <!-- Disabled so symbol can't be changed -->
+
+                <label for="update-quantity">Quantity:</label>
+                <input type="number" id="update-quantity" name="quantity" required>
+
+                <label for="update-price">Purchase Price:</label>
+                <input type="number" id="update-price" name="price" step="0.01" required>
+
+                <button type="submit">Update Stock</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
